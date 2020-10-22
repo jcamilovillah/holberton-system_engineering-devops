@@ -7,11 +7,13 @@ while ((i < 61)); do
     case $i in
         60)
         let hour+=1
-        echo "Hour: $hour"
+        if ((hour < 13)); then
+            echo "Hour: $hour"
+        fi
         let i=1
         ;;
     esac
-    if ((hour == 12)); then
+    if ((hour == 13)); then
         break
     fi
     echo $i
