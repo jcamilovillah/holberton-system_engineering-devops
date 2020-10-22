@@ -10,8 +10,7 @@ while ((i < 61)); do
         if ((hour < 13)); then
             echo "Hour: $hour"
         fi
-        let i=1
-        ;;
+        let i=1;;
     esac
     if ((hour == 13)); then
         break
