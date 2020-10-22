@@ -4,7 +4,8 @@ if [ -e holbertonschool  ]; then
     echo "holbertonschool file exists"
     if [ -f holbertonschool ]; then
         echo "holbertonschool is a regular file"
-    elif [ -s holbertonschool  ]; then
+    fi
+    if [ -s holbertonschool  ]; then
         echo "holbertonschool file is empty"
     else
         echo "holbertonschool file is not empty"
