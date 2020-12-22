@@ -11,7 +11,7 @@ sudo sed -i '/listen 80 default_server/a add_header X-Served-By "$HOSTNAME";' /e
 sudo apt-get install --no-install-recommends software-properties-common
 sudo add-apt-repository ppa:vbernat/haproxy-1.6
 sudo apt-get install haproxy=1.6.\*
-echo "frontend LOADBALANCER-01
+sudo echo "frontend LOADBALANCER-01
     bind  *:80
     default_backend WEBSERVERS-01
 backend WEBSERVERS-01
