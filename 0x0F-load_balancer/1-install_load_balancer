@@ -1,13 +1,6 @@
 #!/usr/bin/env bash
 #configures a brand new Ubuntu machine to the requirements asked in this task
 sudo apt-get update
-sudo apt-get -y install nginx
-sudo ufw allow 'Nginx HTTP'
-sudo echo "Holberton School" > /var/www/html/index.html
-sudo sed -i '/listen 80 default_server/a rewrite ^/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;' /etc/nginx/sites-available/default
-echo "Ceci n'est pas une page" > /var/www/html/404.html
-sudo sed -i '/listen 80 default_server/a error_page 404 /404.html;' /etc/nginx/sites-available/default
-sudo sed -i '/listen 80 default_server/a add_header X-Served-By "$HOSTNAME";' /etc/nginx/sites-available/default
 sudo apt-get install --no-install-recommends software-properties-common
 sudo add-apt-repository ppa:vbernat/haproxy-1.6
 sudo apt-get install haproxy=1.6.\*
@@ -19,4 +12,3 @@ sudo echo "frontend LOADBALANCER-01
         server 1894-web-01 35.227.48.225:80 check
         server 1894-web-02 34.74.219.148:80 check" >> /etc/haproxy/haproxy.cfg
 sudo service haproxy restart
-sudo service nginx restart
